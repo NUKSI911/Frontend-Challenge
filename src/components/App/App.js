@@ -38,13 +38,11 @@ export default function App() {
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
     if (searchTerm) {
-      console.log(searchTerm);
       let result = profiles.filter((obj) =>
         Object.keys(obj).some((key) =>
           String(obj[key]).toLowerCase().includes(searchTerm.toLowerCase())
         )
       );
-      console.log(result);
       setSearchResult(() => result);
     }
   };
@@ -52,6 +50,7 @@ export default function App() {
   const _filterUpdated = (newData, filtersObject) => {
     setSearchResult(() => newData);
   };
+  
   let handleResult = searchResult.length !== 0 ? searchResult : profiles;
 
   return (

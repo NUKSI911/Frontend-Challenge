@@ -19,7 +19,7 @@ export default function App() {
   const [searchResult, setSearchResult] = useState([]);
 
   useEffect(() => {
-    const url = "http://api.enye.tech/v1/challenge/records";
+    const url = "https://api.enye.tech/v1/challenge/records";
     fetchRecords(url)
       .then((profiles) => setProfiles([...profiles]))
       .catch((err) => {

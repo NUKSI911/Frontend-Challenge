@@ -20,7 +20,7 @@
     "whatwg-fetch": "^3.5.0"
   },
   "scripts": {
-    "start": "node server/server.js",
+    "build": "node server/server.js",
     "eject": "react-scripts eject",
     "prettier": "prettier * --write"
   },

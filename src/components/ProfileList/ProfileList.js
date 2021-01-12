@@ -3,7 +3,7 @@ import { Ellipsis } from "react-css-spinners";
 import TableFilter from "react-table-filter";
 
 import "./ProfileList.css";
-export function ProfileList({ result, _filterUpdated }) {
+export function ProfileList({ result, _filterUpdated,profiles }) {
   if (result.length === 0)
     return (
       <div className="spinner">
@@ -15,7 +15,7 @@ export function ProfileList({ result, _filterUpdated }) {
     <table class="styled-table">
       <caption>Profile Information</caption>
       <thead>
-        <TableFilter rows={result} onFilterUpdate={_filterUpdated}>
+        <TableFilter rows={result} key="i"  onFilterUpdate={_filterUpdated}>
           <th>No</th>
           <th
             key={"FirstName"}

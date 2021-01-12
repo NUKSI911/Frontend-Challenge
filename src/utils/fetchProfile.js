@@ -1,5 +1,11 @@
 export async function fetchRecords(url) {
-  return fetch(url)
-    .then((response) => response.json())
+  try{
+
+    return fetch(url)
+    .then((response) =>    response.json())
     .then((jsonResponse) => jsonResponse.records.profiles);
+  }
+ catch(err){
+   console.log(err)
+ }
 }

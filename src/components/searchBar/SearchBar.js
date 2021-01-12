@@ -5,7 +5,7 @@ export function SearchBar({ term, handleSearch }) {
     <React.Fragment>
       <input
         type="text"
-        class="form-control"
+        className="form-control"
         placeholder="Search"
         onChange={handleSearch}
       />

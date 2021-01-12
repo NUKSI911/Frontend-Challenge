@@ -27,13 +27,15 @@ export default function App() {
       });
   }, []);
 
+
   const handlePageClick = (data) => {
-    if (data.selected === 0) {
-      return;
-    }
+    // if (data.selected === 0) {
+    //   return;
+    // }
     setSelected(() => data.selected * 20);
     setPerPage((selected) => selected + 20);
   };
+
 
   const handleSearch = (e) => {
     const searchTerm = e.target.value;
@@ -48,28 +50,33 @@ export default function App() {
   };
 
   const _filterUpdated = (newData, filtersObject) => {
-    setSearchResult(() => newData);
+      if(newData){
+        setSearchResult(()=>newData)
+        console.log(searchResult);
+
+      }
   };
-  
-  let handleResult = searchResult.length !== 0 ? searchResult : profiles;
+
+
+  let resultList = searchResult.length !== 0 ? searchResult : profiles ;
 
   return (
     <React.Fragment>
-      <SearchBar term={searchTerm} handleSearch={handleSearch} />
+      <SearchBar term={searchTerm} handleSearch={handleSearch}  />
       <ReactPaginate
         previousLabel={"previous"}
         nextLabel={"next"}
         breakLabel={"..."}
         breakClassName={"break-me"}
-        pageCount={handleResult.length / 20}
+        pageCount={resultList.length / 20}
         onPageChange={handlePageClick}
         containerClassName={"pagination"}
         subContainerClassName={"pages pagination"}
         activeClassName={"active"}
       />
       <ProfileList
-        result={handleResult.slice(selected, perPage)}
-        _filterUpdated={_filterUpdated}
+        result={resultList.slice(selected, perPage)}
+        _filterUpdated={_filterUpdated} 
       />
     </React.Fragment>
   );

@@ -45,7 +45,7 @@ li:not(:first-of-type) {
   width: 30px;
 }
 
-li.previous.disabled {
+li.disabled {
   visibility: hidden;
 }
 

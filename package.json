@@ -21,6 +21,9 @@
   },
   "scripts": {
     "start": "node server/server.js",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
     "prettier": "prettier * --write"
   },
   "eslintConfig": {
